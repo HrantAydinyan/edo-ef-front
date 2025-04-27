@@ -58,7 +58,7 @@ export const CustomSelect: FC<CustomSelectProps> = ({
 
       {isOpen && (
         <div className="select-options">
-          {options.map((option) => (
+          {options?.map((option) => (
             <div
               key={option.id}
               className={`select-option ${

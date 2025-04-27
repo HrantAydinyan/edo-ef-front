@@ -15,7 +15,7 @@ export const ContactUs = () => {
           </p>
         </div>
         <div className="contact_addresses">
-          {CONTACT_ADDRESSES.map((element) => (
+          {CONTACT_ADDRESSES?.map((element) => (
             <AddressList
               key={element.id}
               country={element.country}

@@ -415,7 +415,7 @@ export const InvestmentCalculator = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {(selectedTab === "yearly" ? tableYearlyData : tableData).map(
+                  {(selectedTab === "yearly" ? tableYearlyData : tableData)?.map(
                     (data, index) => (
                       <tr key={index} className="table_column">
                         <td className="table_element">{index + 1}</td>

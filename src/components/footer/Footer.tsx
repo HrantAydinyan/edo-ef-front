@@ -12,7 +12,7 @@ export const Footer = () => {
           <div key={service.id} className="service_container">
             <h3 className="service_title">{service.title}</h3>
             <ul className="service_elements_field">
-              {service.elements.map((element) => (
+              {service.elements?.map((element) => (
                 <li key={element.id} className="service_element">
                   <Link href={element.pathname} className="service_link">
                     {element.title}

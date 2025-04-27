@@ -48,7 +48,7 @@ export const MortgageTable: FC<IMortgageTable> = ({
             </tr>
           </thead>
           <tbody>
-            {data.map((element, index) => (
+            {data?.map((element, index) => (
               <tr key={index} className="table_column">
                 <td className="table_element">{element.year}</td>
                 <td className="table_element">€{element.payment}</td>
