@@ -1,0 +1,124 @@
+.services_container {
+  padding: 40px 135px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 64px 80px;
+  }
+
+  @include ipad {
+    padding: 50px 30px;
+  }
+
+  @include phone {
+    padding: 24px 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    .container_header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: calc(100% - 280px);
+      box-sizing: border-box;
+
+      @include ipad {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 32px;
+        line-height: 40px;
+        font-family: boldFont;
+        color: $nutral_dark;
+      }
+
+      .description {
+        font-size: 16px;
+        color: $nutral_normal;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        text-align: center;
+      }
+    }
+
+    .elements_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      @include ipad {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .service_element {
+        box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.05);
+        padding: 24px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        @include phone {
+          padding: 16px;
+        }
+
+        .image_field {
+          font-size: 0;
+        }
+
+        .service_info_field {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .service_info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .element_title {
+              font-size: 20px;
+              line-height: 28px;
+              font-family: boldFont;
+              letter-spacing: 0.5px;
+              color: $nutral_dark;
+            }
+
+            .element_description {
+              color: $nutral_dark;
+              font-size: 16px;
+              line-height: 24px;
+              letter-spacing: 0.15px;
+            }
+          }
+
+          .more_link {
+            align-self: flex-end;
+
+            .more_field {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+
+              .more_text {
+                color: $button_primary;
+                font-size: 16px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

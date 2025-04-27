@@ -1,0 +1,29 @@
+.calendar_page {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 16px 50px;
+
+  .calendly_page {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+
+    .calendly-inline-widget {
+      width: 100%;
+    }
+
+    .calendly_page_title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+      margin-bottom: 20px;
+      font-family: boldFont;
+    }
+  }
+}

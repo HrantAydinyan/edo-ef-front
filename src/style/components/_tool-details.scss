@@ -1,0 +1,44 @@
+.tool_details {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .tool_details_header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 104px 135px 0;
+
+    @include minMacDesktop {
+      padding: 53px 80px;
+    }
+
+    @include ipad {
+      padding: 53px 30px;
+      width: 100%;
+    }
+
+    @include minPhone {
+      padding: 24px 16px;
+    }
+
+    .tool_details_title {
+      font-size: 32px;
+      line-height: 40px;
+      font-family: boldFont;
+      color: $nutral_dark;
+    }
+
+    .tool_details_description {
+      font-size: 16px;
+      color: $nutral_normal;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      text-align: center;
+    }
+  }
+}

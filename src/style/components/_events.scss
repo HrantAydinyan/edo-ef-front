@@ -1,0 +1,211 @@
+.events_container {
+  padding: 64px 135px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 64px 80px;
+  }
+
+  @include ipad {
+    padding: 50px 30px;
+  }
+
+  @include phone {
+    padding: 24px 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    .container_header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: calc(100% - 280px);
+      box-sizing: border-box;
+
+      @include ipad {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 32px;
+        line-height: 40px;
+        font-family: boldFont;
+        color: $nutral_dark;
+      }
+
+      .description {
+        font-size: 16px;
+        color: $nutral_normal;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        text-align: center;
+      }
+    }
+
+    .elements_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+
+      @include macDesktop {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include ipad {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      @include minPhone {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .blog_item {
+        padding: 12.5px 12px;
+        border-radius: 8px;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        .blog_info {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          box-sizing: border-box;
+
+          .blog_image_field {
+            font-size: 0;
+            border-radius: 8px;
+            overflow: hidden;
+
+            &:hover {
+              .blog_image {
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+              }
+            }
+
+            .blog_image {
+              border-radius: 8px;
+              width: 100%;
+              height: auto;
+              transition: all 0.3s ease;
+            }
+          }
+
+          .blog_info_field {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .blog_info_text {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              box-sizing: border-box;
+
+              .blog_title {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.15px;
+                color: $nutral_dark;
+                font-family: semiboldFont;
+              }
+
+              .blog_label {
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.15px;
+                color: $nutral_dark;
+              }
+            }
+
+            .blog_info_description {
+              max-width: 302px;
+              box-sizing: border-box;
+
+              @include ipad {
+                max-width: unset;
+              }
+
+              .description_text {
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 0.5px;
+                font-family: boldFont;
+                color: $nutral_dark;
+              }
+            }
+          }
+        }
+
+        .author_field {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          box-sizing: border-box;
+
+          .author_line {
+            width: calc(100% - 18px);
+            height: 1px;
+            background-color: rgba(226, 229, 240, 1);
+          }
+
+          .author_info_container {
+            width: 100%;
+            box-sizing: border-box;
+
+            .author_info_content {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+
+              .author_image {
+                border-radius: 100%;
+              }
+
+              .author_info {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                .author_name {
+                  font-size: 18px;
+                  line-height: 20px;
+                  letter-spacing: 0.5px;
+                  font-family: boldFont;
+                  color: $nutral_dark;
+                }
+
+                .author_role {
+                  color: $nutral_dark;
+                  font-size: 16px;
+                  line-height: 24px;
+                  letter-spacing: 0.15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

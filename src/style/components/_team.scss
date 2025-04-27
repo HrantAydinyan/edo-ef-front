@@ -1,0 +1,103 @@
+.team_container {
+  padding: 53px 117px;
+  background-color: $nutral_normal;
+
+  @include minMacDesktop {
+    padding: 53px 80px;
+  }
+
+  @include ipad {
+    padding: 53px 30px;
+  }
+
+  @include minPhone {
+    padding: 24px 16px;
+  }
+
+  .team_content {
+    display: flex;
+    flex-direction: column;
+    gap: 95px;
+
+    .team_page_header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      gap: 12px;
+
+      .team_title {
+        font-size: 32px;
+        line-height: 40px;
+        font-family: boldFont;
+        color: $nutral_light;
+      }
+
+      .team_description {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: $nutral_light;
+        text-align: center;
+        width: 74%;
+
+        @include ipad {
+          width: 100%;
+        }
+      }
+    }
+
+    .team_members_container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+      width: 100%;
+      box-sizing: border-box;
+
+      @include ipad {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include phone {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include minPhone {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .team_member {
+        padding: 33px 0 81px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $nutral_light;
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        align-items: center;
+
+        .member_info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .member_name {
+            font-size: 24px;
+            line-height: 32px;
+            font-family: boldFont;
+            letter-spacing: 0.5px;
+            color: $button_primary;
+          }
+
+          .member_role {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            color: $nutral_dark;
+          }
+        }
+      }
+    }
+  }
+}

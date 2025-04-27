@@ -1,0 +1,204 @@
+.header {
+  padding: 33px 104px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 20px 40px;
+  }
+
+  @include phone {
+    padding: 16px 24px;
+  }
+
+  .logo_container {
+    @include ipad {
+      width: 140px;
+    }
+  }
+
+  .header_menu {
+    @include ipad {
+      display: none;
+    }
+    .navigation_list {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .navigation_element {
+        color: $primary_light_gray;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+        transition: all 0.5s;
+      }
+
+      .active_navigation_element {
+        font-family: semiboldFont;
+        color: $primary_dark_gray;
+        transition: all 0.5s;
+        position: relative;
+
+        &::after {
+          content: "";
+          width: calc(100% - 20px);
+          height: 2px;
+          position: absolute;
+          background-color: $nav_border_color;
+          left: 10px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .header_actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .free_consultation_button {
+      background-color: $button_primary;
+      padding: 16px 24px;
+      font-size: 18px;
+      line-height: 20px;
+      font-family: boldFont;
+      letter-spacing: 0.5px;
+      border: none;
+      border-radius: 18px;
+      color: $nutral_light;
+      cursor: pointer;
+
+      @include phone {
+        display: none;
+      }
+    }
+
+    .menu_icon_field {
+      display: none;
+      font-size: 0;
+
+      @include ipad {
+        display: block;
+      }
+    }
+  }
+
+  .mobile_navbar_container {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100dvh;
+    background-color: #00000099;
+
+    @keyframes blur_animationEffect {
+      0% {
+        backdrop-filter: blur(0);
+      }
+      100% {
+        backdrop-filter: blur(16px);
+      }
+    }
+
+    @keyframes collapseEffect {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    @keyframes collapseReverseEffect {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .mobile_menu {
+      width: 90%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+      position: relative;
+      padding: 16px 24px;
+      background-color: $white;
+      animation: collapseEffect 1s;
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .mobile_menu_header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile_menu_list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        width: 100%;
+        box-sizing: border-box;
+
+        .mobile_menu_item {
+          padding: 10px 12px;
+          width: 100%;
+          box-sizing: border-box;
+          font-size: 16px;
+          color: $nutral_dark;
+          line-height: 19px;
+          // font-family: var(--font-syne);
+
+          // &:hover {
+          //   background-color: $surface_300;
+          // }
+        }
+      }
+
+      .contact_us_button_field {
+        position: absolute;
+        bottom: 16px;
+        left: 24px;
+        box-sizing: border-box;
+        width: 100%;
+
+        .free_consultation_button {
+          background-color: $button_primary;
+          padding: 16px 24px;
+          font-size: 18px;
+          line-height: 20px;
+          font-family: boldFont;
+          letter-spacing: 0.5px;
+          border: none;
+          border-radius: 18px;
+          color: $nutral_light;
+        }
+      }
+    }
+
+    .collapse_menu {
+      animation: collapseReverseEffect 1s;
+    }
+  }
+}

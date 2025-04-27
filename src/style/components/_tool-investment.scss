@@ -1,0 +1,356 @@
+.investment_calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 135px;
+  background-color: $azure_light;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 40px 60px;
+  }
+
+  @include ipad {
+    padding: 40px 30px;
+  }
+
+  @include phone {
+    padding: 24px 16px;
+  }
+
+  .investment_body {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include ipad {
+      flex-direction: column;
+    }
+
+    @include phone {
+      gap: 24px;
+    }
+
+    .investment_form_section {
+      width: 400px;
+      box-sizing: border-box;
+      background-color: $white;
+      padding: 30px 16px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-height: fit-content;
+
+      @include ipad {
+        width: 100%;
+      }
+
+      .form_title {
+        font-size: 24px;
+        font-family: boldFont;
+        color: $nutral_dark;
+        border-bottom: 2px solid $nutral_dark;
+        padding-bottom: 20px;
+      }
+
+      .investment_calculator_form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+
+        .investment_calculator_input {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          position: relative;
+
+          .purchase_price {
+            color: $black_opacity_6;
+          }
+
+          .input_element_field {
+            border: none;
+            border-bottom: 1px solid $nutral_normal;
+            padding: 10px 0;
+            font-size: 14px;
+            color: $primary_dark_gray;
+            width: 100%;
+            box-sizing: border-box;
+
+            &:focus {
+              outline: none;
+              border-bottom: 1px solid $nutral_dark;
+            }
+          }
+
+          .error_message_field {
+            position: absolute;
+            color: red;
+            font-size: 12px;
+            bottom: -20px;
+          }
+        }
+
+        .submit_button {
+          background-color: $button_primary;
+          padding: 8px 24px;
+          font-size: 16px;
+          font-family: boldFont;
+          letter-spacing: 0.5px;
+          border: none;
+          border-radius: 10px;
+          color: $nutral_light;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .investment_body_right {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .investment_table {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: $white;
+        padding: 30px 16px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .table_title_field {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          @include minPhone {
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 16px;
+          }
+
+          .table_title {
+            font-size: 24px;
+            font-family: boldFont;
+            color: $nutral_dark;
+          }
+
+          .table_tabs {
+            display: flex;
+            gap: 10px;
+            border: 1px solid $nutral_light;
+            align-items: center;
+            border-radius: 6px;
+            padding: 4px;
+
+            .tab_button {
+              background-color: transparent;
+              border: 1px solid $nutral_light;
+              padding: 4px 12px;
+              border-radius: 6px;
+              font-size: 14px;
+              cursor: pointer;
+              transition: all 0.5s;
+            }
+
+            .active_tab {
+              background-color: $button_primary;
+              border: 1px solid $button_primary;
+              color: $white;
+              transition: all 0.5s;
+            }
+          }
+        }
+
+        .table {
+          width: 100%;
+          box-sizing: border-box;
+          border-top-left-radius: 10px;
+          border-top-left-radius: 10px;
+
+          tr {
+            width: 100%;
+            box-sizing: border-box;
+
+            &:first-child {
+              th {
+                &:last-child {
+                  border-top-right-radius: 10px;
+                }
+
+                &:first-child {
+                  border-top-left-radius: 10px;
+                }
+              }
+            }
+          }
+
+          .table_row {
+            padding: 5px 10px;
+
+            .table_row_title {
+              font-size: 16px;
+              color: $nutral_dark;
+            }
+
+            .table_row_value {
+              font-size: 16px;
+              color: $primary_dark_gray;
+            }
+          }
+
+          .head_row {
+            font-family: boldFont;
+          }
+        }
+      }
+    }
+  }
+}
+
+.invest_table {
+  overflow-y: overlay;
+  height: calc(100dvh - 150px);
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  max-height: fit-content;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .table {
+    width: 100%;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    .header_row {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    tr {
+      width: 100%;
+      box-sizing: border-box;
+
+      &:first-child {
+        th {
+          &:last-child {
+            border-top-right-radius: 10px;
+          }
+
+          &:first-child {
+            border-top-left-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .header_element {
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+      text-align: start;
+      white-space: nowrap;
+      border: none;
+      border-left: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #222222;
+
+      &:first-child {
+        border: none;
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
+
+    .header_show_element {
+      padding: 0;
+      position: sticky;
+      background-color: #f8f8f8;
+      top: 0;
+      right: 0;
+    }
+
+    .table_body_element {
+      padding: 10px 16px;
+      font-size: 14px;
+      line-height: 22px;
+      width: calc(100% / 6);
+      box-sizing: border-box;
+    }
+
+    .table_column {
+      &:last-child {
+        .table_element {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .table_element {
+      border-left: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #222222;
+      width: fit-content;
+      white-space: nowrap;
+
+      &:first-child {
+        border: none;
+        border-bottom: 1px solid #e6e6e6;
+      }
+
+      .address_element {
+        width: 172px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+      }
+
+      .service_labels {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .show_column {
+      padding: 0 12px;
+      position: sticky;
+      right: 0;
+      text-align: center;
+      background-color: $white;
+
+      .show_icon {
+        font-size: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

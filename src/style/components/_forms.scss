@@ -1,0 +1,185 @@
+.forms_container {
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  background-color: $button_primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include phone {
+    padding: 16px 0;
+  }
+
+  .form_content {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 92px 52px;
+    border-radius: 35px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    gap: 61px;
+
+    @include phone {
+      width: calc(100% - 32px);
+      padding: 36px 16px;
+      gap: 30px;
+    }
+
+    .form_header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+
+      .form_title {
+        font-size: 32px;
+        font-family: boldFont;
+        color: $nutral_dark;
+        line-height: 40px;
+        text-align: center;
+      }
+
+      .form_description {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        color: $nutral_dark;
+        padding: 0 57px;
+        text-align: center;
+
+        @include phone {
+          padding: 0;
+        }
+      }
+    }
+
+    .form_page_form {
+      display: flex;
+      flex-direction: column;
+      gap: 61px;
+
+      @include phone {
+        gap: 30px;
+      }
+
+      .line {
+        width: calc(100% - 70px);
+        align-self: center;
+        height: 2px;
+        background-color: $nutral_light;
+      }
+
+      .form_element_container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .section_title {
+          font-size: 18px;
+          line-height: 20px;
+          letter-spacing: 0.5px;
+          color: $nutral_normal;
+          font-family: boldFont;
+        }
+
+        .inputs_field {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+          padding: 0 63px;
+
+          @include phone {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 0;
+          }
+
+          .input_element {
+            padding: 9px 19px;
+            border: 2px solid rgba(235, 235, 237, 1);
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 0.5px;
+            color: $nutral_normal;
+          }
+        }
+
+        .request_button {
+          padding: 19px 49px;
+          border-radius: 16px;
+          background-color: $button_primary;
+          border: none;
+          color: $white;
+          width: fit-content;
+          align-self: center;
+          font-size: 24px;
+          line-height: 32px;
+          letter-spacing: 0.5px;
+          font-family: boldFont;
+
+          @include phone {
+            padding: 12px 30px;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.type_elements_section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 18px;
+
+  @include minMacDesktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include phone {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .type_element {
+    box-shadow: 0px 1px 1px 0px rgba(100, 116, 139, 0.06);
+    box-shadow: 0px 1px 2px 0px rgba(100, 116, 139, 0.1);
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .type_info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .type_name {
+        color: $black;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+      }
+    }
+
+    .checkbox_film {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #49454f;
+      background-color: $button_primary;
+      border-radius: 2px;
+      display: flex;
+      font-size: 0;
+      align-items: center;
+      justify-content: center;
+
+      .checkbox_input {
+        display: none;
+      }
+    }
+  }
+}

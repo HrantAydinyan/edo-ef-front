@@ -1,0 +1,133 @@
+.home_page_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 101px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 0 32px 40px;
+    gap: 60px;
+  }
+
+  @include ipad {
+    flex-direction: column-reverse;
+    padding: 0 16px 40px;
+    gap: 24px;
+  }
+
+  .home_banner {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    @include ipad {
+      width: 100%;
+    }
+  }
+
+  .home_content_section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 80px;
+
+    @include minMacDesktop {
+      padding-left: 0;
+    }
+
+    @include ipad {
+      width: 100%;
+    }
+
+    .home_content_header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .home_title {
+        color: $primary_light_gray;
+        font-family: boldFont;
+        font-size: 64px;
+        line-height: 57px;
+        letter-spacing: -0.25px;
+
+        @include phone {
+          font-size: 32px;
+          line-height: 36px;
+        }
+      }
+
+      .home_description {
+        color: $nutral_normal;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .email_us_section {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      @include phone {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      .book_appointment_btn {
+        background-color: $button_primary;
+        padding: 12px 18px;
+        font-size: 18px;
+        line-height: 20px;
+        font-family: boldFont;
+        letter-spacing: 0.5px;
+        border: none;
+        border-radius: 12px;
+        color: $nutral_light;
+
+        @include minPhone {
+          width: 100%;
+        }
+      }
+
+      .email_input {
+        background-color: $nutral_light_hover;
+        border-radius: 28px;
+        padding: 16px 24px;
+        border: none;
+        color: $nutral_normal;
+        min-width: 420px;
+        outline: none;
+
+        @include minMacDesktop {
+          min-width: 250px;
+        }
+
+        @include phone {
+          min-width: 400px;
+        }
+
+        @include minPhone {
+          min-width: unset;
+          width: 100%;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .error_email_input {
+        outline: 1px solid red;
+      }
+    }
+  }
+}

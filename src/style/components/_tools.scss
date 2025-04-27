@@ -1,0 +1,96 @@
+.tools_container {
+  padding: 104px 135px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 64px 80px;
+  }
+
+  @include ipad {
+    padding: 50px 30px;
+  }
+
+  @include phone {
+    padding: 24px 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+    .container_header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      box-sizing: border-box;
+
+      @include ipad {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 32px;
+        line-height: 40px;
+        font-family: boldFont;
+        color: $nutral_dark;
+      }
+    }
+
+    .tools_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 19px;
+
+      @include minMacDesktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include ipad {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .tool_element {
+        padding: 10px 13px;
+        border-radius: 8px;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        cursor: pointer;
+
+        .image_field {
+          font-size: 0;
+        }
+
+        .tool_info {
+          padding: 6.5px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .tool_title {
+            color: $nutral_dark;
+            font-family: boldFont;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+          }
+
+          .tool_description {
+            color: $nutral_dark;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,405 @@
+.mortgage_calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 135px;
+  background-color: $azure_light;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include minMacDesktop {
+    padding: 40px 60px;
+  }
+
+  @include ipad {
+    padding: 40px 30px;
+  }
+
+  @include phone {
+    padding: 24px 16px;
+  }
+
+  .mortgage_calculator_title {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: boldFont;
+    color: $nutral_dark;
+    text-align: center;
+
+    @include phone {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .mortgage_calculator_field {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include ipad {
+      flex-direction: column;
+    }
+
+    .mortgage_calculator_form_section {
+      width: 400px;
+      box-sizing: border-box;
+      background-color: $white;
+      padding: 30px 16px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-height: fit-content;
+
+      @include ipad {
+        width: 100%;
+      }
+
+      .form_title {
+        font-size: 24px;
+        font-family: boldFont;
+        color: $nutral_dark;
+        border-bottom: 2px solid $nutral_dark;
+        padding-bottom: 20px;
+      }
+
+      .mortgage_calculator_form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+
+        .mortgage_calculator_input {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          position: relative;
+
+          .purchase_price {
+            color: $black_opacity_6;
+          }
+
+          .input_element_field {
+            border: none;
+            border-bottom: 1px solid $nutral_normal;
+            padding: 10px 0;
+            font-size: 14px;
+            color: $primary_dark_gray;
+            width: 100%;
+            box-sizing: border-box;
+
+            &:focus {
+              outline: none;
+              border-bottom: 1px solid $nutral_dark;
+            }
+          }
+
+          .error_message_field {
+            position: absolute;
+            color: red;
+            font-size: 12px;
+            bottom: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.custom_select_container {
+  position: relative;
+  width: 100%;
+  font-family: inherit;
+
+  .select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background: white;
+    border: none;
+    border-bottom: 1px solid $nutral_normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .select-header:hover {
+    border-color: #aaa;
+  }
+
+  .arrow-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .arrow-icon.open {
+    transform: rotate(180deg);
+  }
+
+  .select-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .select-option {
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+
+  .select-option:hover {
+    background: #f7fafc;
+  }
+
+  .select-option.selected {
+    background: #ebf5ff;
+    font-weight: 500;
+  }
+
+  .selected-value {
+    font-size: 14px;
+  }
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input_element_field {
+  padding-right: 1.5rem;
+}
+
+.input_element_suffix {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px 0 0;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  background: #ccc;
+  border-radius: 3px;
+  position: relative;
+}
+
+.track {
+  background: #ccc;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.track-0 {
+  background-color: #007bff;
+}
+
+.thumb {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: -6px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.mortgage_calculator_right_side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .mortgage_description {
+    padding: 16px;
+    border-radius: 10px;
+    background-color: $white;
+
+    .description_text {
+      color: $black_opacity_6;
+      font-size: 0.875rem;
+
+      .bold_text {
+        font-family: boldFont;
+      }
+    }
+  }
+
+  .total_purchase {
+    padding: 16px;
+    border-radius: 10px;
+    background-color: $white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .total_purchase_title {
+      .total_purchase_title_text {
+        font-size: 24px;
+        font-family: boldFont;
+        color: $nutral_dark;
+      }
+    }
+
+    .mortgage_table_title {
+      display: flex;
+      justify-content: space-between;
+
+      .table_tabs {
+        display: flex;
+        gap: 10px;
+        border: 1px solid $nutral_light;
+        align-items: center;
+        border-radius: 6px;
+        padding: 4px;
+
+        .tab_button {
+          background-color: transparent;
+          border: 1px solid $nutral_light;
+          padding: 4px 12px;
+          border-radius: 6px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+
+        .active_tab {
+          background-color: $button_primary;
+          border: 1px solid $button_primary;
+          color: $white;
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    .total_purchase_content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid $nutral_light;
+
+      .purchase_content_item {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 16px;
+        border-bottom: 1px solid $nutral_light;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .item_text {
+          font-size: 14px;
+          color: $nutral_normal;
+        }
+      }
+    }
+
+    .total_purchase_details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      @include minMacDesktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include phone {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .mortgage_calculator_input {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .purchase_price {
+          color: $black_opacity_6;
+        }
+
+        .input_element_field {
+          border: none;
+          border-bottom: 1px solid $nutral_normal;
+          padding: 10px 0;
+          font-size: 14px;
+          color: $primary_dark_gray;
+          width: 100%;
+          box-sizing: border-box;
+
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid $nutral_dark;
+          }
+
+          &:disabled {
+            background-color: transparent;
+          }
+        }
+
+        .error_message_field {
+          position: absolute;
+          color: red;
+          font-size: 12px;
+          bottom: -20px;
+        }
+      }
+    }
+
+    .chart_container {
+      height: 600px;
+
+      @include phone {
+        height: 300px;
+      }
+    }
+  }
+}
